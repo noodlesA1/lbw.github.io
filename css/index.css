@@ -1,0 +1,106 @@
+    .ballArea {
+        width: 100vw;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 24px;
+
+        .magicCube {
+            z-index: 1000;
+            perspective: 240px;
+            transform-style: preserve-3d;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            animation: 3s linear .5s infinite normal forwards running rotate;
+
+            .magicCube_face {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+                width: 40px;
+                height: 40px;
+                position: absolute;
+            }
+
+            .magicCube_one {
+                background-color: aquamarine;
+                transform: translateZ(20px);
+            }
+
+            .magicCube_two {
+                background-color: black;
+                transform: translateZ(-20px);
+            }
+
+            .magicCube_three {
+                background-color: red;
+                transform: rotateY(-90deg) translateZ(20px);
+            }
+
+            .magicCube_four {
+                background-color: blue;
+                transform: rotateY(90deg) translateZ(20px);
+            }
+
+            .magicCube_five {
+                background-color: green;
+                transform: rotateX(90deg) translateZ(20px);
+            }
+
+            .magicCube_six {
+                background-color: purple;
+                transform: rotateX(-90deg) translateZ(20px);
+            }
+        }
+
+        .gieie {
+            animation: 2s linear .5s 1 normal forwards running giegie;
+        }
+    }
+
+    .a_area_one {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 10px;
+
+        .a_area_one_wangzhan {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 14rem;
+            height: 3rem;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid;
+            transition: all 1s ease-out;
+        }
+
+        .a_area_one_wangzhan:hover,
+        .a_area_one_wangzhan:focus {
+            background-color: #fff;
+            color: #333;
+        }
+    }
+
+    @keyframes giegie {
+        0% {
+            font-size: 0;
+        }
+
+        100% {
+            font-size: 24px;
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate3d(0, 0, 0, 0);
+        }
+
+        100% {
+            transform: rotate3D(1, 1, 1, 360deg)
+        }
+    }
