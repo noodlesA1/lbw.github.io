@@ -1,10 +1,10 @@
-    .ballArea {
+    .ball_area {
         width: 100vw;
         height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 24px;
+        padding: 10px 20px;
 
         .magicCube {
             z-index: 1000;
@@ -13,7 +13,7 @@
             width: 40px;
             height: 40px;
             position: relative;
-            animation: 3s linear .5s infinite normal forwards running rotate;
+            animation: 2s linear .5s infinite alternate-reverse forwards running rotateCube;
 
             .magicCube_face {
                 display: flex;
@@ -63,14 +63,15 @@
 
     .a_area_one {
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-between;
         margin-top: 10px;
+        padding: 0 20px;
 
         .a_area_one_wangzhan {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 14rem;
+            width: 30vw;
             height: 3rem;
             background-color: #333;
             color: #fff;
@@ -85,22 +86,32 @@
         }
     }
 
+    .fluid-area {
+        width: 100vw;
+        padding: 0 20px;
+        display: flex;
+
+        .fluid-area_block {
+            width: 50px;
+        }
+    }
+
     @keyframes giegie {
         0% {
             font-size: 0;
         }
 
         100% {
-            font-size: 24px;
+            font-size: 20px;
         }
     }
 
-    @keyframes rotate {
+    @keyframes rotateCube {
         0% {
-            transform: rotate3d(0, 0, 0, 0);
+            transform: translateX(0) rotate3d(0, 0, 0, 0);
         }
 
         100% {
-            transform: rotate3D(1, 1, 1, 360deg)
+            transform: translateX(200px) rotate3d(1, 1, 1, 360deg);
         }
     }
