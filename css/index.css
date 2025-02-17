@@ -1,10 +1,14 @@
-    .ball_area {
+    .ball-area {
         width: 100vw;
         height: 70px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        background-color: #333;
+        color: #fff;
 
         .magicCube {
             z-index: 1000;
@@ -15,7 +19,12 @@
             position: relative;
             animation: 2s linear .5s infinite alternate-reverse forwards running rotateCube;
 
-            .magicCube_face {
+            img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .magicCube-face {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -25,33 +34,33 @@
                 position: absolute;
             }
 
-            .magicCube_one {
-                background-color: aquamarine;
+            .magicCube-one {
+                background-color: transparent;
                 transform: translateZ(20px);
             }
 
-            .magicCube_two {
-                background-color: black;
+            .magicCube-two {
+                background-color: transparent;
                 transform: translateZ(-20px);
             }
 
-            .magicCube_three {
-                background-color: red;
+            .magicCube-three {
+                background-color: transparent;
                 transform: rotateY(-90deg) translateZ(20px);
             }
 
-            .magicCube_four {
-                background-color: blue;
+            .magicCube-four {
+                background-color: transparent;
                 transform: rotateY(90deg) translateZ(20px);
             }
 
-            .magicCube_five {
-                background-color: green;
+            .magicCube-five {
+                background-color: transparent;
                 transform: rotateX(90deg) translateZ(20px);
             }
 
-            .magicCube_six {
-                background-color: purple;
+            .magicCube-six {
+                background-color: transparent;
                 transform: rotateX(-90deg) translateZ(20px);
             }
         }
@@ -61,14 +70,16 @@
         }
     }
 
-    .a_area_one {
+    .a-area-one {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
-        margin: 10px 0;
-        padding: 0 20px;
+        padding: 20px;
+        position: sticky;
+        top: 70px;
+        background-color: #fff;
 
-        .a_area_one_wangzhan {
+        .a-area-one-wangzhan {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,8 +90,8 @@
             transition: all 1s ease-out;
         }
 
-        .a_area_one_wangzhan:hover,
-        .a_area_one_wangzhan:focus {
+        .a-area-one-wangzhan:hover,
+        .a-area-one-wangzhan:focus {
             background-color: #fff;
             color: #333;
         }
@@ -88,31 +99,27 @@
 
     .fluid-area {
         width: 100vw;
-        height: 500px;
-        padding: 0 20px;
-        display: grid;
-        gap: 10px;
-        grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
-        grid-template-columns: 1fr 1fr;
-        grid-auto-flow: row dense;
+        /* height: 500px; */
+        padding: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        /* grid-template-rows: repeat(auto-fill, minmax(200px, 1fr)); */
+        /* grid-template-columns: 1fr 1fr; */
+        /* grid-auto-flow: row dense; */
+        row-gap: 20px;
         overflow-y: auto;
+        justify-content: space-around;
 
-        .fluid-area_block {
-            /* width: 100px;
-            height: 100px; */
-            background-color: #333;
-        }
-
-        .fluid-area_block_one {
-            /* width: 140px;
-            height: 100px; */
-            background-color: #3f1d1d;
-        }
-
-        .fluid-area_block_two {
-            /* width: 200px;
-            height: 100px; */
-            background-color: #941919;
+        .fluid-area-block {
+            flex: 0 0 45%;
+            padding: 4px;
+            text-indent: 32px;
+            border-radius: 8px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 8;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 

@@ -1,13 +1,14 @@
-import { contextArr } from "../constant/text";
-import { getRandomColor } from "../utils/a";
+import { contextArr } from "../constant/text.js";
+import { getRandomColor, getRandomWidthAndHeight } from "../utils/a.js";
 
-const fluid_area = document.querySelectorAll("fluid-area");
-
+let fluid_area = document.querySelectorAll(".fluid-area");
 window.onload = () => {
     contextArr.forEach((item, index) => {
-        console.log(item);
-        fluid_area.appendChild(`<div class="${fluid_area + index}">${item}</div>`);
-        const fluid_area_block = document.querySelectorAll(`${fluid_area + index}`);
-        fluid_area_block.style.backgroundColor = getRandomColor();
+        const divEle = document.createElement('div');
+        divEle.className = 'fluid-area-block'
+        divEle.textContent = item
+        divEle.style.backgroundColor = getRandomColor(0.1);
+        divEle.style.color = getRandomColor();
+        fluid_area[0].appendChild(divEle);
     })
 };
