@@ -1,5 +1,5 @@
 import { contextArr } from "../constant/text.js";
-import { getRandomColor, getRandomWidthAndHeight } from "../utils/a.js";
+import { getRandomColor, } from "../utils/a.js";
 
 let fluid_area = document.querySelectorAll(".fluid-area");
 window.onload = () => {
@@ -12,3 +12,30 @@ window.onload = () => {
         fluid_area[0].appendChild(divEle);
     })
 };
+let hospitalEle = document.querySelector(".hospital");
+console.log(hospitalEle.clientLeft, hospitalEle.clientTop);
+let isMove = false;  // 标记是否正在拖动
+function onmousedownHospitalHandle(event) {
+    hospitalEle.style.left = event.clientX - 30 + "px"
+    hospitalEle.style.top = event.clientY - 30 + "px"
+    isMove = true
+}
+function onmousemoveHospitalHandle(event) {
+    if (isMove) {
+        console.log(event.clientX, event.clientY);
+        hospitalEle.style.left = event.clientX - 30 + "px"
+        hospitalEle.style.top = event.clientY - 30 + "px"
+    }
+}
+function onmouseupHospitalHandle() {
+    hospitalEle.style.right = "-30px"
+    hospitalEle.style.top = "40%"
+    isMove = false
+}
+hospitalEle.addEventListener("mousedown", onmousedownHospitalHandle);
+hospitalEle.addEventListener("mousemove", onmousemoveHospitalHandle);
+hospitalEle.addEventListener("mouseup", onmouseupHospitalHandle);
+// hospital.addEventListener("drag", onmousemoveHospitalHandle);
+// hospitalEle.addEventListener("click", (event) => {
+//     console.log(event.clientX, event.clientY);
+// });
