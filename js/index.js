@@ -28,9 +28,9 @@ function onmousemoveHospitalHandle(event) {
     }
 }
 function onmouseupHospitalHandle() {
+    isMove = false
     hospitalEle.style.right = "-30px"
     hospitalEle.style.top = "40%"
-    isMove = false
 }
 hospitalEle.addEventListener("mousedown", onmousedownHospitalHandle);
 hospitalEle.addEventListener("mousemove", onmousemoveHospitalHandle);
