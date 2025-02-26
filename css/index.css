@@ -2,146 +2,154 @@
     width: 100%;
     height: 100%;
     position: relative;
-    overflow-x: hidden;
-}
-
-.hospital {
-    width: 60px;
-    height: 60px;
-    border-radius: 60px;
-    background-color: #333;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    left: -30px;
-    top: 40%;
-    z-index: 1000;
+    flex-direction: column;
 
-    img {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-.ball-area {
-    width: 100vw;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    position: sticky;
-    top: 0;
-    background-color: #333;
-    color: #fff;
-
-    .magicCube {
-        z-index: 1000;
-        perspective: 240px;
-        transform-style: preserve-3d;
-        width: 40px;
-        height: 40px;
-        position: relative;
-        animation: 2s linear .5s infinite alternate-reverse forwards running rotateCube;
-
-        img {
-            width: 36px;
-            height: 36px;
-        }
-
-        div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            width: 40px;
-            height: 40px;
-            position: absolute;
-            background-color: transparent;
-        }
-
-        .magicCube-one {
-            transform: translateZ(20px);
-        }
-
-        .magicCube-two {
-            transform: translateZ(-20px);
-        }
-
-        .magicCube-three {
-            transform: rotateY(-90deg) translateZ(20px);
-        }
-
-        .magicCube-four {
-            transform: rotateY(90deg) translateZ(20px);
-        }
-
-        .magicCube-five {
-            transform: rotateX(90deg) translateZ(20px);
-        }
-
-        .magicCube-six {
-            transform: rotateX(-90deg) translateZ(20px);
-        }
+    #mask {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        display: none;
+        background-color: rgba(255, 255, 255, .85);
+        z-index: 1001;
     }
 
-    .gieie {
-        animation: 2s linear .5s 1 normal forwards running giegie;
-    }
-}
-
-.a-area-one {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
-    padding: 20px;
-    position: sticky;
-    top: 70px;
-    background-color: #fff;
-
-    a {
+    .hospital {
+        width: 60px;
+        height: 60px;
+        border-radius: 60px;
+        background-color: #333;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 3rem;
+        position: fixed;
+        left: -30px;
+        top: 40%;
+        z-index: 1000;
+
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .ball-area {
+        width: 100vw;
+        flex: 0 0 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2vh 20px;
         background-color: #333;
         color: #fff;
-        border: 1px solid;
-        transition: all 1s ease-out;
+
+        .magicCube {
+            z-index: 1000;
+            perspective: 240px;
+            transform-style: preserve-3d;
+            width: 7vh;
+            height: 7vh;
+            position: relative;
+            animation: 2s linear .5s infinite alternate-reverse forwards running rotateCube;
+
+            img {
+                width: 6.5vh;
+                height: 6.5vh;
+            }
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 7vh;
+                height: 7vh;
+                position: absolute;
+                background-color: transparent;
+            }
+
+            .magicCube-one {
+                transform: translateZ(3.5vh);
+            }
+
+            .magicCube-two {
+                transform: translateZ(-3.5vh);
+            }
+
+            .magicCube-three {
+                transform: rotateY(-90deg) translateZ(3.5vh);
+            }
+
+            .magicCube-four {
+                transform: rotateY(90deg) translateZ(3.5vh);
+            }
+
+            .magicCube-five {
+                transform: rotateX(90deg) translateZ(3.5vh);
+            }
+
+            .magicCube-six {
+                transform: rotateX(-90deg) translateZ(3.5vh);
+            }
+        }
+
+        .giegie {
+            animation: 2s linear .5s 1 normal forwards running giegie;
+        }
     }
 
-    a:hover,
-    a:focus {
+    .a-area-one {
+        flex: 0 0 10vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        padding: 2vh 20px;
         background-color: #fff;
-        color: #333;
+
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #333;
+            color: #fff;
+            border: 1px solid;
+            transition: all 1s ease-out;
+        }
+
+        a:hover,
+        a:focus {
+            background-color: #fff;
+            color: #333;
+        }
     }
-}
 
-.fluid-area {
-    width: 100vw;
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    overflow-y: auto;
-    justify-content: space-around;
+    .fluid-area {
+        width: 100vw;
+        padding: 20px;
+        flex: 0 0 80vh;
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 20px;
+        overflow-y: auto;
+        justify-content: space-around;
 
-    div {
-        flex: 0 0 45%;
-        padding: 4px;
-        text-indent: 32px;
-        border-radius: 8px;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 8;
-        text-overflow: ellipsis;
-        overflow: hidden;
+        div {
+            flex: 0 0 45%;
+            padding: 0 4px;
+            text-indent: 32px;
+            border-radius: 8px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 8;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
     }
-}
 
-div:first-letter {
-    font-size: 24px;
+    div:first-letter {
+        font-size: 24px;
+    }
 }
 
 @keyframes giegie {
