@@ -39,3 +39,21 @@ hospitalEle.addEventListener("mouseup", onmouseupHospitalHandle);
 // hospitalEle.addEventListener("click", (event) => {
 //     console.log(event.clientX, event.clientY);
 // });
+console.log(111);
+new Promise(function (resolve, reject) {
+    setTimeout(function () {
+        console.log("First");
+    }, 1000);
+    resolve("first");
+}).then(function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Second");
+            resolve();
+        }, 4000);
+    });
+}).then(function () {
+    setTimeout(function () {
+        console.log("Third");
+    }, 3000);
+});
