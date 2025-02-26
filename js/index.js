@@ -29,16 +29,13 @@ function onmousemoveHospitalHandle(event) {
 }
 function onmouseupHospitalHandle() {
     isMove = false
-    hospitalEle.style.right = "-30px"
-    hospitalEle.style.top = "40%"
+    hospitalEle.style.left =-30+"px"
+    hospitalEle.style.top = 40+"%"
 }
 hospitalEle.addEventListener("mousedown", onmousedownHospitalHandle);
 hospitalEle.addEventListener("mousemove", onmousemoveHospitalHandle);
 hospitalEle.addEventListener("mouseup", onmouseupHospitalHandle);
-// hospital.addEventListener("drag", onmousemoveHospitalHandle);
-// hospitalEle.addEventListener("click", (event) => {
-//     console.log(event.clientX, event.clientY);
-// });
+
 console.log(111);
 new Promise(function (resolve, reject) {
     setTimeout(function () {
