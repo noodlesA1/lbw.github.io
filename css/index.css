@@ -48,48 +48,48 @@
             z-index: 1000;
             perspective: 240px;
             transform-style: preserve-3d;
-            width: 7vh;
-            height: 7vh;
+            width: 5vh;
+            height: 5vh;
             position: relative;
             animation: 2s linear .5s infinite alternate-reverse forwards running rotateCube;
 
             img {
-                width: 6.5vh;
-                height: 6.5vh;
+                width: 4.5vh;
+                height: 4.5vh;
             }
 
             div {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 7vh;
-                height: 7vh;
+                width: 5vh;
+                height: 5vh;
                 position: absolute;
                 background-color: transparent;
             }
 
             .magicCube-one {
-                transform: translateZ(3.5vh);
+                transform: translateZ(2.5vh);
             }
 
             .magicCube-two {
-                transform: translateZ(-3.5vh);
+                transform: translateZ(-2.5vh);
             }
 
             .magicCube-three {
-                transform: rotateY(-90deg) translateZ(3.5vh);
+                transform: rotateY(-90deg) translateZ(2.5vh);
             }
 
             .magicCube-four {
-                transform: rotateY(90deg) translateZ(3.5vh);
+                transform: rotateY(90deg) translateZ(2.5vh);
             }
 
             .magicCube-five {
-                transform: rotateX(90deg) translateZ(3.5vh);
+                transform: rotateX(90deg) translateZ(2.5vh);
             }
 
             .magicCube-six {
-                transform: rotateX(-90deg) translateZ(3.5vh);
+                transform: rotateX(-90deg) translateZ(2.5vh);
             }
         }
 

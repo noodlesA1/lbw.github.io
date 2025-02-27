@@ -1,7 +1,6 @@
 import { contextArr } from "../constant/text.js";
 import { getRandomColor, } from "../utils/a.js";
 
-
 let view = document.getElementById("view");
 let mask = document.getElementById("mask");
 let fluid_area = document.querySelectorAll(".fluid-area");
@@ -20,7 +19,7 @@ window.onload = () => {
             fluidAreaBlock.style.position = "absolute";
             fluidAreaBlock.style.top = "50%";
             fluidAreaBlock.style.left = "50%";
-            fluidAreaBlock.style.transform = "translate(-50%,-50%)";
+            fluidAreaBlock.style.transform = "translate(-50%,-50%) scale(2,2)";
             fluidAreaBlock.style.zIndex = "1002";
             mask.style.display = "block";
             view.style.overflowY = "hidden";
